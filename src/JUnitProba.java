@@ -21,13 +21,26 @@ public class JUnitProba {
 	}
 	@Test
 	public void tieneColor(){
-		opel.setColor("Rojo");
+		opel.pintar("Rojo");
 		assertNotNull(opel.getColor());
 	}
 	@Test
-	public void conductor(){
+	public void aparcar(){
+		opel.aparcar();
 		assertNull(opel.getConductor());
 	}
+	@Test
+	public void velocidadDiferente(){
+		opel.acelerar(40);
+		assertNotSame(20, opel.getVelocidad());
+	}
+	
+	@Test
+	public void matricula(){
+		String matricula="SS4352HF";
+		assertSame(matricula, opel.getMatricula());
+	}
+	
 	
 
 }
