@@ -40,6 +40,15 @@ public class Coche {
 		}
 		
 	}
+	
+	public void pintar(String color){
+		this.color=color;
+	}
+	
+	public void aparcar(){
+		this.velocidad=0;
+		this.conductor=null;
+	}
 
 	
 	
