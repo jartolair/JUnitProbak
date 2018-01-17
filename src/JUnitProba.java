@@ -6,6 +6,18 @@ public class JUnitProba {
 	
 	Coche opel=new Coche("SS4352HF","Opel","zafira");
 	@Test
+	public void cerrarCoche(){
+		opel.setNum_puertas(5);
+		opel.cerrarCoche();
+		
+		String[] esperado=new String[opel.getNum_puertas()];
+		for (int i = 0; i < esperado.length; i++) {
+			esperado[i]="Cerrado";
+		}
+		assertArrayEquals(esperado, opel.getEstado_de_puertas());
+		
+	}
+	@Test
 	public void marcaCorrecta() {
 		String marca="Opel";
 		assertEquals(marca, opel.getMarca());

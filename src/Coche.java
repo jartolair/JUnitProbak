@@ -30,7 +30,22 @@ public class Coche {
 	private double kilometraje;
 	private double consumo_medio;//por cien kilometros
 	private double precio_compra;
+	private String[] estado_de_puertas;
 	
+	
+	public String[] getEstado_de_puertas() {
+		return estado_de_puertas;
+	}
+
+	public void setEstado_de_puertas(String[] estado_de_puertas) {
+		this.estado_de_puertas = estado_de_puertas;
+	}
+
+	public void cerrarCoche(){
+		for (int i = 0; i < num_puertas ; i++) {
+			this.estado_de_puertas[i]="Cerrado";
+		}
+	}
 	
 	public boolean estaEnMarcha(){
 		if (this.getVelocidad()==0){
@@ -258,6 +273,7 @@ public class Coche {
 	 */
 	public void setNum_puertas(int num_puertas) {
 		this.num_puertas = num_puertas;
+		this.setEstado_de_puertas(new String[num_puertas]);
 	}
 	/**
 	 * obtener el numero de plazas
