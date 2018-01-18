@@ -10,10 +10,7 @@ public class JUnitProba {
 		opel.setNum_puertas(5);
 		opel.cerrarCoche();
 		
-		String[] esperado=new String[opel.getNum_puertas()];
-		for (int i = 0; i < esperado.length; i++) {
-			esperado[i]="Cerrado";
-		}
+		String[] esperado={"Cerrado","Cerrado","Cerrado","Cerrado","Cerrado"};
 		assertArrayEquals(esperado, opel.getEstado_de_puertas());
 		
 	}
