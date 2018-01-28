@@ -14,19 +14,24 @@ public class JUnitProba {
 		assertArrayEquals(esperado, opel.getEstado_de_puertas());
 		
 	}
+
 	@Test
-	public void marcaCorrecta() {
-		String marca="Opel";
-		assertEquals(marca, opel.getMarca());
+	public void testValorar() {
+		
+		opel.setAnioMatriculacion(3);
+		opel.setKilometraje(500);
+		double precio=opel.valorar();
+		double precioEsperado=101500;
+		assertEquals(precioEsperado, precio, 0.01);
 	}
-	@Test
-	public void estaParado(){
-		assertFalse(opel.estaEnMarcha());
-	}
+
 	@Test
 	public void enMarcha(){
 		opel.acelerar(40);
 		assertTrue(opel.estaEnMarcha());
+		
+		opel.aparcar();
+		assertFalse(opel.estaEnMarcha());
 	}
 	@Test
 	public void tieneColor(){
@@ -35,19 +40,23 @@ public class JUnitProba {
 	}
 	@Test
 	public void aparcar(){
+		opel.setConductor("Patxi");
 		opel.aparcar();
 		assertNull(opel.getConductor());
 	}
 	@Test
-	public void velocidadDiferente(){
-		opel.acelerar(40);
-		assertNotSame(20, opel.getVelocidad());
+	public void repostar(){
+		opel.setCapacidad_combustible(50);
+		opel.setLitros_combustible(20);
+		opel.repostar(10);
+		assertNotSame(20, opel.getLitros_combustible());
 	}
 	
 	@Test
 	public void matricula(){
-		String matricula="SS4352HF";
-		assertSame(matricula, opel.getMatricula());
+		Coche opel2=opel;
+		opel2.acelerar(100);
+		assertSame(opel2, opel);
 	}
 	
 	

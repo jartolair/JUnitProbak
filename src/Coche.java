@@ -7,7 +7,7 @@
  * @author ik012982i9
  *
  */
-public class Coche {
+public class Coche{
 	final double precioGasoil=1.12;
 	final double precioGasolina=1.39;
 	//atributos
@@ -65,6 +65,7 @@ public class Coche {
 		this.conductor=null;
 	}
 
+	
 	
 	
 	public String getConductor() {
@@ -134,6 +135,8 @@ public class Coche {
 	public void acelerar(int kmHora){
 		setVelocidad(this.velocidad+kmHora);
 	}
+	
+	
 	/**
 	 * Este proceso sirve para cambiar la marcha del coche
 	 * @param mas	<ul>
